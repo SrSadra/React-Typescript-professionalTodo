@@ -1,0 +1,33 @@
+
+.input {
+    display: flex;
+    width: 95%;
+    position: relative;
+    align-items: center;
+}
+
+
+.input_box {
+    border-radius: 20px;
+    width: 40%;
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(12, 232, 232);
+    transition: background-color 2s;
+}
+
+.input_box:focus {
+    background-color: rgb(28, 104, 104);
+    border: 2px black;
+}
+
+.input_submit {
+    position: absolute;
+    margin: 10px;
+    width: 40px;
+    height: 30px;
+    font-size: 15px;
+    border: none;
+    border-radius: 40px;
+    right: 60px;
+}
