@@ -1,19 +1,30 @@
 
+body{
+    background-color: rgb(193, 193, 193);
+}
+
+.input-container {
+    display:flex;
+    width: 100%;
+    align-items: center; /* for center items vertically */
+    justify-content: center;  /* for center flex items horizontally */
+
+}
+
 .input {
     display: flex;
-    width: 95%;
-    position: relative;
-    align-items: center;
+    width: 50%;
+    margin-top: 40px;
 }
 
 
 .input_box {
     border-radius: 20px;
-    width: 40%;
     padding: 10px 20px;
     border: none;
-    background-color: rgb(12, 232, 232);
+    background-color: rgb(0, 121, 192);
     transition: background-color 2s;
+    flex: 1
 }
 
 .input_box:focus {
@@ -22,12 +33,73 @@
 }
 
 .input_submit {
-    position: absolute;
-    margin: 10px;
-    width: 40px;
-    height: 30px;
-    font-size: 15px;
+    width: 25px;
+    position:relative;
     border: none;
-    border-radius: 40px;
-    right: 60px;
+    border-radius: 10px;
+}
+
+
+
+
+.todo-form {
+    display: flex;
+    margin: 20px;
+    padding: 5px;
+    background-color: rgb(19, 89, 120);
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    transition: 1s;
+}
+
+.todo-form:hover {
+    box-shadow: 10px 5px 10px black ;
+    transform: scale(1.1);
+}
+
+
+.todo-name {
+    flex: 1;
+}
+
+.todo-prop {
+    
+
+}
+
+
+@media (max-width : 600px){
+    .input {
+        width: 80%;
+    }
+
+    .todo-form {
+        width: 70%;
+    }
+}
+
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    width: 90%;
+    margin: 5%;
+}
+
+.todos-active {
+    width: 50%;
+    background-color: green;
+    border-radius: 2%;
+}
+
+.container-span {
+    text-align: center;
+    margin: 5%;
+}
+
+.todos-completed {
+    width: 50%;
+    background-color: red;
+    border-radius: 2%;
 }

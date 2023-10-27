@@ -9,14 +9,16 @@ interface TodoProp {
 
 
 
-export const InputField : React.FC<TodoProp> = ({todo , setTodo , addTodos} : TodoProp) => {
+export const InputField : React.FC<TodoProp> = ({todo , setTodo , addTodos}) => {
     const inputRef = useRef<HTMLInputElement>(null) // react hooks should always be called inside components
 
-    return <form className="input" onSubmit={(e) => { // onSubmit has event as input so we should pass it for addTodos 
+    return <div className="input-container"> <form className="input" onSubmit={(e) => { // onSubmit has event as input so we should pass it for addTodos 
         addTodos(e);
         inputRef.current?.blur();
+        e.preventDefault();
     }}>
-        <input ref={inputRef} type={"text"} className="input_box"></input>
-        <button className="input_submit" onClick={(event) => setTodo(event.target.value)}>go</button>
+        <input ref={inputRef} type={"text"} className="input_box" onChange={(e) => setTodo(e.target.value)} value={todo}></input>
+        <button className="input_submit" type={"submit"} >go</button>
     </form>
+    </div>
 }
