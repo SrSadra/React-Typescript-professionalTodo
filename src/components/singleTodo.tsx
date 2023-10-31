@@ -18,7 +18,7 @@ type singleProp = {
 
 
 
-export const SingleTodo : React.FC<singleProp> = ({index ,todo , todos, setTodos}) => {
+export const SingleTodo : React.FC<singleProp> = ({todo , todos, setTodos , index}) => {
     const [edit , setEdit] = useState(false);
     const [editValue , setEditValue] = useState(todo.title);
 
@@ -31,6 +31,7 @@ export const SingleTodo : React.FC<singleProp> = ({index ,todo , todos, setTodos
     function doneFunc(){
         setTodos(todos.map((el) => { // in map you always have a return for each element
             if (el.id === todo.id) {
+                console.log("mire");
                 return {...todo , isDone : true}; 
             }
             else {
